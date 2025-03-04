@@ -555,3 +555,7 @@ body.dark .team .team-h1 {
 .far{
   background-color: #009efd;
 }
+
+.far-conflict {
+  background-color: #ff0000;
+}
