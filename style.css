@@ -551,3 +551,7 @@ body.dark .team .team-h1 {
     transform: scale(1.2);
   }
 }
+
+.far{
+  background-color: #009efd;
+}
