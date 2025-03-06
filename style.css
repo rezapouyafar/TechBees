@@ -559,3 +559,13 @@ body.dark .team .team-h1 {
 .far-conflict {
   background-color: #ff0000;
 }
+
+.new-commit{
+  displayflex;
+  justity-content: center;
+  align-items: center;
+  color: red;
+  background-color: blue;
+  margin: auto;
+  padding: 1rem;
+}
