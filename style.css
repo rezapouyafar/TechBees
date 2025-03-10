@@ -672,3 +672,7 @@ body.dark .team .team-h1 {
   display: flex;
   color: red;
 }
+
+.testimonials{
+  columns: red;
+}
