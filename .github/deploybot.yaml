@@ -1,0 +1,25 @@
+name: Modify Last Commit Message
+
+on:
+  push:
+    branches:
+      - far  # شاخه‌ای که این اکشن برای آن اجرا می‌شود
+
+jobs:
+  modify-commit-message:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v3
+
+    - name: Get the latest commit message
+      id: get_message
+      run: echo "message=$(git log -1 --pretty=%B)" >> $GITHUB_ENV
+
+    - name: Modify the commit message
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git commit --amend -m "${{ env.message }}*" # اضافه کردن * به آخر پیام کامیت
+        git push --force
