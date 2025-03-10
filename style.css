@@ -663,3 +663,7 @@ body.dark .team .team-h1 {
   margin: auto;
   padding: 1rem;
 }
+
+.new-test{
+  display: flex;
+}
