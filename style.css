@@ -677,3 +677,10 @@ body.dark .team .team-h1 {
   columns: red;
   color: rebeccapurple;
 }
+
+.new-test{
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  text-decoration: dashed;
+}
