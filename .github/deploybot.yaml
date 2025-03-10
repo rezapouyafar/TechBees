@@ -1,15 +1,25 @@
-# Config for deploybot.app
-# Docs https://docs.deploybot.app/config/
-# Ordered list of Github Deployment environments
-deployments:
-- name: development
-    on_push: true
+name: Log Push Time
 
-# Automatically trigger deploy on default branch passing
-# on_push: true
-- name: staging
-    on_push: true
+on:
+  push:
+    branches:
+      - [main,far]
 
-- name: production
-    on_push: true
+jobs:
+  log-time:
+    runs-on: ubuntu-latest
 
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    - name: Write push time to file
+      run: echo "Push occurred at $(date)" >> time.log
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add time.log
+        git commit -m "Log push time"
+        git push
